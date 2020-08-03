@@ -1,13 +1,13 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  swiftlint_ci:
     runs-on: ubuntu-latest
-    name: A job to say hello
+    name: Run Swiftlint
     steps:
-    - name: Hello world action step
+    - name: Checkout
       id: hello
-      uses: actions/hello-world-docker-action@v1
+      uses: codyatnews/github-actions@v1
       with:
         who-to-greet: 'Mona the Octocat'
     # Use the output from the `hello` step

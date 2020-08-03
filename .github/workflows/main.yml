@@ -1,14 +1,15 @@
 on: [push]
 
 jobs:
-  hello_world_job:
+  swiftlint_ci:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
-      - name: Checkout
-        uses: codyatnews/github-actions@v1
+      - uses: actions/checkout@v2-beta
+        with:
+          # Private version of https://github.com/actions/hello-world-docker-action
+          repository: codyatnews/github-actions
+          token: ${{ secrets.GitHub_PAT }} # `GitHub_PAT` is a secret that contains your PAT to clone that private repo
       - name: Hello world action step
         uses: ./ # Uses an action in the root directory
         id: hello

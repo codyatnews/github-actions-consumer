@@ -7,7 +7,7 @@ jobs:
     steps:
     - name: Checkout
       id: hello
-      uses: codyatnews/github-actions@v1
+      uses: codyatnews/github-actions-swiftlint@v1
       with:
         who-to-greet: 'Mona the Octocat'
     # Use the output from the `hello` step

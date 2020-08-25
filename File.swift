@@ -4,7 +4,7 @@ import Foundation
 
 
 class Test {
-    let string = "im a string"
+    public let string = "im a string"
 
     func test() {
     }

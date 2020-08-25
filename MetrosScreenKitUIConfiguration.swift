@@ -1,18 +1,15 @@
 //  © News Pty Limited. All rights reserved.
 
 import Foundation
-import ScreenKit
 
+
+import ScreenKit
 
 /// Handles default UI configuration of ScreenKit
 final class MetrosScreenKitUIConfiguration: DefaultScreenKitUIConfiguration {
     
     public static var dateFormatter: DateFormatter {
         let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.timeZone = LocalConfig.mastheadTimeZone
-        dateFormatter.dateFormat = "MMM d, YYYY h:mm a"
-        dateFormatter.amSymbol = "am"
-        dateFormatter.pmSymbol = "pm"
         return dateFormatter
     }
     

@@ -1,0 +1,51 @@
+excluded:
+  - Pods
+  - App/Code/External
+
+disabled_rules:
+  - line_length
+  - file_length
+  - function_body_length
+  - void_return
+  - identifier_name
+  - cyclomatic_complexity
+  - nesting
+  - operator_whitespace
+  - force_cast
+  - function_parameter_count
+  - unused_optional_binding
+  - todo
+  - large_tuple
+  - for_where
+  - multiple_closures_with_trailing_closure
+  - type_body_length
+  - class_delegate_protocol
+  - discarded_notification_center_observer
+  - trailing_comma
+
+type_name:
+  max_length:
+    warning: 200
+    error: 200
+
+custom_rules:
+  no_public: # rule identifier
+    included: ".*\\.swift" # regex that defines paths to include during linting. optional.
+    excluded: ".*Test\\.swift" # regex that defines paths to exclude during linting. optional
+    name: "No Public Access Level" # rule name. optional.
+    regex: "(public)" # matching pattern
+    capture_group: 0 # number of regex capture group to highlight the rule violation at. optional.
+    message: "Public should only be used when writing a framework." # violation message. optional.
+    severity: error # violation severity. optional.
+    match_kinds: # SyntaxKinds to match. optional.
+      - attribute.builtin
+  no_open: # rule identifier
+    included: ".*\\.swift" # regex that defines paths to include during linting. optional.
+    excluded: ".*Test\\.swift" # regex that defines paths to exclude during linting. optional
+    name: "No Open Access Level" # rule name. optional.
+    regex: "(open)" # matching pattern
+    capture_group: 0 # number of regex capture group to highlight the rule violation at. optional.
+    message: "Open should only be used when writing a framework." # violation message. optional.
+    severity: error # violation severity. optional.
+    match_kinds: # SyntaxKinds to match. optional.
+      - attribute.builtin

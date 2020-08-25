@@ -1,6 +1,8 @@
 //  © News Pty Limited. All rights reserved.
 
 import Foundation
+
+
 import ScreenKit
 
 /// Handles default UI configuration of ScreenKit
@@ -8,14 +10,10 @@ final class MetrosScreenKitUIConfiguration: DefaultScreenKitUIConfiguration {
     
     public static var dateFormatter: DateFormatter {
         let dateFormatter: DateFormatter = DateFormatter()
-        dateFormatter.timeZone = LocalConfig.mastheadTimeZone
-        dateFormatter.dateFormat = "MMM d, YYYY h:mm a"
-        dateFormatter.amSymbol = "am"
-        dateFormatter.pmSymbol = "pm"
         return dateFormatter
     }
     
-    private let additionSupport = {() -> AdditionSupport in
+    open let additionSupport = {() -> AdditionSupport in
         
         /// Date adition transformer. It transforms a timestamp inside the text into the users timezone with the required default format
         let dateAdditionTransformer = AdditionTransformer(typeName: "date", transformer: { (_, attributedString, addition) in

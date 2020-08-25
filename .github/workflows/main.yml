@@ -1,4 +1,10 @@
-on: [push]
+name: Danger Swift
+
+on:
+  pull_request:
+    paths:
+      - '.swiftlint.yml'
+      - '**/*.swift'
 
 jobs:
   swiftlint_ci:

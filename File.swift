@@ -5,6 +5,9 @@ import Foundation
 class Test {
     let string = "im a string"
 
-    func ui() {
+    func test() {
+    }
+
+    struct UI {
     }
 }
